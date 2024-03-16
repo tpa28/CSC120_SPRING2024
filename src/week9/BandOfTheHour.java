@@ -16,7 +16,7 @@ public class BandOfTheHour {
     /**
      Scanner input.
      */
-    private static Scanner keyboard = new Scanner(System.in);
+    private final static Scanner keyboard = new Scanner(System.in);
     /**
      * Maximum number of row.
      */
