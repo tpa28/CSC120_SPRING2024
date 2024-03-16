@@ -258,11 +258,11 @@ public class BandOfTheHour {
             printMenu();
             String optionInput = keyboard.next().toUpperCase();
 
-            // Checking if optionInput contains A, P, R, or X
-            if (!optionInput.matches("[ARPX]")) {
+            /** Input validation to for optionInput*/
+            while (!optionInput.matches("[ARPX]")) {
                 System.out.print("ERROR: Invalid option, try again              : ");
                 optionInput = keyboard.next();
-            } // end of if statement
+            } // end of while loop
 
             option = optionInput.charAt(0);
 
