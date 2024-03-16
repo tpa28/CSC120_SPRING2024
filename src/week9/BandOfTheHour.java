@@ -16,7 +16,7 @@ public class BandOfTheHour {
     /**
      Scanner input.
      */
-    private final static Scanner keyboard = new Scanner(System.in);
+    private static final Scanner keyboard = new Scanner(System.in);
     /**
      * Maximum number of row.
      */
@@ -81,7 +81,7 @@ public class BandOfTheHour {
             do {
                 /** Input validation for whther the input is a positive integer */
                 while (!keyboard.hasNextInt()) {
-                    System.out.print("ERROR: Invalid input. Please enter a valid integer.");
+                    System.out.print("ERROR: Invalid input. try again               : ");
                     keyboard.next();
                 } // end of while loop
                 numberOfPositions = keyboard.nextInt();
@@ -214,23 +214,20 @@ public class BandOfTheHour {
 
         System.out.print("Please enter row letter                       : ");
         rowLetter = keyboard.next().toUpperCase().charAt(0);
-
-        // Checking if that row letter exists
-        if (rowLetter < 'A' || rowLetter > ('A' + numberOfRows - 1)) {
-            System.out.print("ERROR: Out of range, try again:");
-            rowLetter = keyboard.next().toUpperCase().charAt(0);
-        } // end of if statement
-
+        /** Input validation for whether that row exists or if the input is wrong */
+        while (rowLetter < 'A' || rowLetter > ('A' + numberOfRows - 1)) {
+            System.out.print("ERROR: Out of range, try again                : ");
+            rowLetter = keyboard.next().toUpperCase().charAt(0);;
+        } // end of the while loop
         totalPositions = weightAssignments[rowLetter - 'A'].length;
 
         System.out.print("Please enter position number (1 to " + totalPositions + ")         : ");
         position = keyboard.nextInt();
-
-        // Checking if there is such position within that row
-        if (position < 1 || position > totalPositions) {
+        /** Input validation for choosing a position in a row */
+        while (position < 1 || position > totalPositions) {
             System.out.print("ERROR: Out of range, try again                : ");
             position = keyboard.nextInt();
-        } // end of if statement
+        } // end of the while loop
 
         // Checking if there is a musician at that position
         if (weightAssignments[rowLetter - 'A'][position - 1] == 0.0) {
