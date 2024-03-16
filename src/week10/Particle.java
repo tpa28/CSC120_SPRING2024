@@ -24,5 +24,4 @@ public class Particle {
         return "Particle " + tag + " is at (" + xCoordinate + "," + yCoordinate + ")";
     }
 
-
 }

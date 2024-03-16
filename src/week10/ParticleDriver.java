@@ -28,7 +28,6 @@ public class ParticleDriver {
             System.out.println(particle);
         } while (xCoordinate != 0.0 || yCoordinate != 0.0);
 
-
     } // end of Main Method
 
 } // end of ParticleDriver Class
