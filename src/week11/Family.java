@@ -35,7 +35,6 @@ public class Family {
         for (int personInPosition = 0; personInPosition < numberOfPeople; personInPosition++) {
             if (family[personInPosition].getName().equalsIgnoreCase(name)) {
                 family[personInPosition].incrementAge();
-                break;
             } // end of if statement
         } // end of for loop
     } // end of birthday method
